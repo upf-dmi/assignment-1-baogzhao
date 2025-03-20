@@ -72,7 +72,7 @@ Then, we perform a first glance to the dataset with `str()`, in which we see all
 ```{r}
 
 # Read file with correct delimiter (spaces)
-heart_data <- read.csv("/Users/jting/Downloads/assignment-1-arnaufme8-main/data/heart_disease_dataset.csv", sep = " ", header = TRUE, na.strings = c("?"))
+heart_data <- read.csv("data/heart_disease_dataset.csv", sep = " ", header = TRUE, na.strings = c("?"))
 heart_data <- heart_data[,1:14] #Remove ID column
 
 # Check the loaded columns
@@ -380,7 +380,7 @@ We are asked to reproduce the following figure from the proposed article:
 Firstly, we load the data and change the names of the columns for a better management.
 
 ```{r}
-data <- read_excel("/Users/jting/Downloads/assignment-1-arnaufme8-main/data/mortality_rates_covid19.xlsx", col_names = TRUE) #Load data
+data <- read_excel("data/mortality_rates_covid19.xlsx", col_names = TRUE) #Load data
 
 #We change names to more accessible ones
 setnames(data, 
@@ -545,7 +545,7 @@ Firstly, we read and pre-process the data (renaming columns and filling missing 
 
 ```{r}
 # Read excel:
-df <- read_excel("/Users/jting/Downloads/assignment-1-arnaufme8-main/data/gene_expression.XLSX", col_names = TRUE, na=c("NI", "ND"), skip = 1) #skip 1st line (not header)
+df <- read_excel("data/gene_expression.xlsx", col_names = TRUE, na=c("NI", "ND"), skip = 1) #skip 1st line (not header)
 
 colnames(df)[1:2] <- c("ID", "Day") # Rename first two columns for clarity
 df$ID <- str_extract(df$ID, "\\d+$")  # Extract only numbers from Patient_ID
